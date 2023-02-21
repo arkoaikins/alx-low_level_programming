@@ -2,7 +2,7 @@
 /**
  * main - prints _putchar
  *
- * Return: Always 0 when successful but return 1 when error
+ * Return: Always 0 when successful but return 1 when unsecussful
  */
 int main(void)
 {
