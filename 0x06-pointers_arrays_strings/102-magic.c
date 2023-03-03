@@ -1,10 +1,9 @@
 #include <stdio.h>
-
-/**
- * main - starting point of code
- *  Return: 0
- */
-
+ /**
+  * main - starting point of the code.
+  * return: 0
+  *:wq
+  */
 int main(void)
 {
 	int n;
