@@ -1,7 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-I/**
+/**
  * This is a header file
  * It contains all the prototype of my functions
  * So this is like me creating my own library with declarations
