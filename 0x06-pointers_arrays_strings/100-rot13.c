@@ -10,7 +10,7 @@
 char *rot13(char *s)
 {
 	int i, j;
-	char r[] = "NOPQRSTDNEpUTHQoQUJMHLrErGJyHg89uy71MyuHbcdefghijklm";
+	char r[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 	char alpha[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char boolean;
 
