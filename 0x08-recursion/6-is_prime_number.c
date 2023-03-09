@@ -32,7 +32,7 @@ int prime_identifier(int n, int i)
 	}
 	if ((n / i) < i)
 	{
-		print (1);
+		return (1);
 	}
 	return (prime_identifier(n, i + 1));
 }
