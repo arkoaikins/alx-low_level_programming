@@ -3,9 +3,8 @@
 
 /*
  * File: object_like_macro
- * Description: a header file that defines a macro 
+ * Description: a header file that defines a macro
  *              named SIZE as an abbreviation for the token 1024.
- *              
  */
 
 #define SIZE 1024
