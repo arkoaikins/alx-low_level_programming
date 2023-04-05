@@ -19,11 +19,3 @@ size_t print_listint(const listint_t *h)
 	} while (h != NULL);
 	return (count);
 }
-
-/* This code solves the task 0*/
-
-/**
- * i could use while or for loop
- * to solve this task but i choose a do while loop
- * just to practice more with do while loops.
- */
