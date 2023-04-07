@@ -1,7 +1,8 @@
 #include<unistd.h>
 /**
- * main - is entry point, where the codes actually starts running
- *
+ * main - program that prints a string to the standard error
+ * the 2 means write it to the standard error
+ * and the last numeber determins the lines of code written
  * Return: 1, if succesful
  */
 int main(void)
