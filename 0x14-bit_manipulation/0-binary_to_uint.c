@@ -1,31 +1,35 @@
 #include "main.h"
 #include <stdio.h>
-#include <string.h>
+
 
 /**
  *  binary_to_uint - converts a binary number to an unsigned int
  * @b: a pointer to the string of 0 and 1 chars
- * Return: the total number of integer
+ * Return: 0 if b isNULL,or one more chars is not 0 or 1
+ *         or the total number of integer
  *
  */
 
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int total = 0;
-	int mult_bin = 1;
-	int string_length = strlen(b);
-	int i;
 
-	for (i = string_length - 1; i >= 0; i--)
+
+	if (b == NULL)
+		return (0);
+
+	while (*b != '\0')
 	{
-		if (b[i] == '1')
-			total += mult_bin;
-
-		else if ((b[i] != '0' && b[i] != '1') || b[i] == '\0')
+		if (*b == '0' || *b == '1')
+		{
+			total <<= 1;
+			total |= (*b - '0');
+		}
+		else
+		{
 			return (0);
-
-		mult_bin *= 2;
-
+		}
+		b++;
 	}
 	return (total);
 }
