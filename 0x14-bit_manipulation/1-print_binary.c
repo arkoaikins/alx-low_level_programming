@@ -8,20 +8,27 @@
 
 void print_binary(unsigned long int n)
 {
-	char binary[65] = {0};
-	int i = 0;
-	int j;
+	unsigned long int bit_position = 1;
+	int bit_number = 0;
 
 	if (n == 0)
 	{
-		_putchar ('0');
+		_putchar('0');
 		return;
 	}
-	while (n > 0)
+
+	while ((n >> bit_number) != 0)
+		bit_number++;
+
+	bit_number--;
+
+
+	while (bit_number >= 0)
 	{
-		binary[i++] = (n & 1) ? '1' : '0';
-		n  >>= 1;
+		if ((n & (bit_position << bit_number)) != 0)
+			_putchar ('1');
+		else
+			_putchar ('0');
+		bit_number--;
 	}
-	for (j = i - 1; j >= 0; j--)
-		_putchar (binary[j]);
 }
