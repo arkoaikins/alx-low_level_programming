@@ -12,6 +12,11 @@ void print_binary(unsigned long int n)
 	int i = 0;
 	int j;
 
+	if (n == 0)
+	{
+		_putchar ('0');
+		return;
+	}
 	while (n > 0)
 	{
 		binary[i++] = (n & 1) ? '1' : '0';
