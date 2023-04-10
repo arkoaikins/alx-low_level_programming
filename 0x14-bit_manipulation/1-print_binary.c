@@ -9,27 +9,11 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int bit_position = 1;
-	int bit_number = 0;
-
-	if (n == 0)
+	if (n < 2)
 	{
-		_putchar('0');
+		_putchar (n + '0');
 		return;
 	}
-
-	while ((n >> bit_number) != 0)
-		bit_number++;
-
-	bit_number--;
-
-
-	while (bit_number >= 0)
-	{
-		if ((n & (bit_position << bit_number)) != 0)
-			_putchar ('1');
-		else
-			_putchar ('0');
-		bit_number--;
-	}
+	print_binary(n >> 1);
+	_putchar((n & 1) + '0');
 }
