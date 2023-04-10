@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 
 
 /**
@@ -7,7 +7,6 @@
  * @b: a pointer to the string of 0 and 1 chars
  * Return: 0 if b isNULL,or one more chars is not 0 or 1
  *         or the total number of integer
- *
  */
 
 unsigned int binary_to_uint(const char *b)
