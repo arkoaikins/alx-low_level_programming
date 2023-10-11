@@ -1,6 +1,8 @@
 #ifndef SEARCH_H
 #define SEARCH_H
 
+#include <stddef.h>
+
 /* Data structure for task 12 */
 
 /**
@@ -64,5 +66,6 @@ listint_t *jump_list(listint_t *list, size_t size, int value);
 
 /* task 13 */
 skiplist_t *linear_skip(skiplist_t *list, int value);
+
 
 #endif
