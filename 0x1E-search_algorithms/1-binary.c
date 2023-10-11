@@ -6,21 +6,25 @@
  * @array: The array to print
  * @low: The lowest index of the subarray
  * @high: The highest index of the subarray
+ * @print: Flag to control printing
  */
-void print_subarray(int *array, int low, int high)
+void print_subarray(int *array, int low, int high, int print)
 {
 	int i;
 
-	printf("Searching in array: ");
-	for (i = low; i <= high; i++)
+	if (print)
 	{
-		printf("%d", array[i]);
-		if (i < high)
+		printf("Searching in array: ");
+		for (i = low; i <= high; i++)
 		{
-			printf(", ");
+			printf("%d", array[i]);
+			if (i < high)
+			{
+				printf(", ");
+			}
 		}
+		printf("\n");
 	}
-	printf("\n");
 }
 
 /**
@@ -29,22 +33,26 @@ void print_subarray(int *array, int low, int high)
  * @size: The number of elements in the array
  * @value: The value to search for
  *
- * Return: The index where value is located, or -1 if not found
+ * Return:  return the index where value is located
+ *          If value is not present in array or if array is NULL,return -1
  */
 int binary_search(int *array, size_t size, int value)
 {
 	int low = 0;
 	int high = size - 1;
+	int print = 1;
 
 	if (array == NULL)
+	{
 		return (-1);
-
+	}
 
 	while (low <= high)
 	{
-		int mid = (low + high) / 2;
+		int mid = low + (high - low) / 2;
 
-		print_subarray(array, low, high);
+		print_subarray(array, low, high, print);
+		print = 1;
 
 		if (array[mid] == value)
 		{
@@ -53,13 +61,15 @@ int binary_search(int *array, size_t size, int value)
 		else if (array[mid] < value)
 		{
 			low = mid + 1;
+			if (low >= (int)size)
+				break;
 		}
 		else
 		{
 			high = mid - 1;
+			if (high < 0)
+				break;
 		}
 	}
-
-	print_subarray(array, low, high);
 	return (-1);
 }
